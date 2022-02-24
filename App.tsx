@@ -1,13 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Card from './app/components/Card';
+import {
+  StyleSheet,
+  Text,
+  SafeAreaView,
+  Platform
+} from 'react-native';
+import Products from './app/components/Products';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app! NO way!!</Text>
-      <Card />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <Text>Construction App</Text>
+      <Products />
+    </SafeAreaView>
   );
 }
 
@@ -17,5 +21,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingTop: Platform.OS === 'android' ? 30 : 0
   },
 });
