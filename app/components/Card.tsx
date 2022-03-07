@@ -27,8 +27,10 @@ const Card = React.memo(function Cart({
           height: halfWidth,
         }}
       ></Image>
-      <Text>{description}</Text>
-      <Text>{formattedPrice}</Text>
+      <View style={styles.descriptionContainer}>
+        <Text>{description}</Text>
+        <Text style={styles.price}>{formattedPrice}</Text>
+      </View>
     </View>
   );
 });
@@ -37,7 +39,6 @@ export default Card;
 
 const styles = StyleSheet.create({
   container: {
-    padding: 10,
     backgroundColor: 'white',
     borderWidth: 0,
     marginTop: 30,
@@ -47,4 +48,10 @@ const styles = StyleSheet.create({
     borderColor: '#808080',
     elevation: 3,
   },
+  descriptionContainer: {
+    padding: 10
+  },
+  price: {
+    marginTop: 10
+  }
 });

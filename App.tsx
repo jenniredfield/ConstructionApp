@@ -2,15 +2,30 @@ import {
   StyleSheet,
   Text,
   SafeAreaView,
-  Platform
+  Platform,
+  ScrollView,
 } from 'react-native';
-import Products from './app/components/Products';
+import Footer from './app/components/Footer';
+import Header from './app/components/Header';
+import PLP from './app/containers/PLP';
+import Search from './app/components/Search';
+import StickyNav from './app/components/StickyNav';
+
+/**
+ * This needs to contain screen stacks
+ */
 
 export default function App() {
   return (
     <SafeAreaView style={styles.container}>
-      <Text>Construction App</Text>
-      <Products />
+      <Header />
+      <Search />
+      <ScrollView>
+        <PLP />
+        <Footer />
+      </ScrollView>
+
+      <StickyNav />
     </SafeAreaView>
   );
 }
@@ -21,6 +36,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: Platform.OS === 'android' ? 30 : 0
+    alignSelf: 'stretch',
+    paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
 });
