@@ -19,7 +19,7 @@ export default Footer;
 
 const styles = StyleSheet.create({
   container: {
-    alignSelf: 'stretch',
+    // alignSelf: 'flex-end',
     alignItems: 'center',
     justifyContent: 'center',
     height: 100,

@@ -1,16 +1,13 @@
+import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import {
-  StyleSheet,
-  View,
-  Text
-} from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
 
 const StickyNav = React.memo(function StickyNav() {
-
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
-        <Text>HOME</Text>
-        <Text>PLP</Text>
+      <Button title="Home" onPress={() => navigation.navigate('HomeScreen')} />
+      <Button title="PLP" onPress={() => navigation.navigate('PLP')} />
     </View>
   );
 });
