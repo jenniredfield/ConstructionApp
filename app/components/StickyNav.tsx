@@ -8,6 +8,7 @@ const StickyNav = React.memo(function StickyNav() {
     <View style={styles.container}>
       <Button title="Home" onPress={() => navigation.navigate('HomeScreen')} />
       <Button title="PLP" onPress={() => navigation.navigate('PLP')} />
+      <Button title="Login" onPress={() => navigation.navigate('LoginScreen')} />
     </View>
   );
 });

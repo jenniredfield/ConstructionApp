@@ -2,8 +2,10 @@ import { StyleSheet, Platform } from 'react-native';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
-import HomeScreen from './app/containers/HomeScreen';
-import PLP from './app/containers/PLP';
+import HomeScreen from './app/screens/HomeScreen';
+import PLP from './app/screens/PLP';
+import LoginScreen from './app/screens/LoginScreen';
+
 // import Footer from './app/components/Footer';
 // import Header from './app/components/Header';
 // import Search from './app/components/Search';
@@ -14,7 +16,10 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 /**
  * This needs to contain screen stacks
  * TODO: Homescreen to PLP
+ * Connect Redux Store to App
+ * Add firebase auth to app
  */
+
 
 export default function App() {
   return (
@@ -25,8 +30,8 @@ export default function App() {
           component={HomeScreen}
           options={{ headerShown: false }} 
         />
-
         <Stack.Screen name="PLP" component={PLP} options={{ headerShown: false }} />
+        <Stack.Screen name="LoginScreen" component={LoginScreen} options={{ headerShown: false }} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -42,16 +47,3 @@ const styles = StyleSheet.create({
     paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
 });
-
-
-  /* <SafeAreaView style={styles.container}>
-<Header />
-<Search />
-<ScrollView>
-  <PLP />
-  <Footer />
-</ScrollView>
-
-<StickyNav />
-</SafeAreaView> */
-

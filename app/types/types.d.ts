@@ -9,6 +9,7 @@ interface Product {
 type RootStackParamList = {
   HomeScreen: undefined;
   PLP: undefined;
+  LoginScreen: undefined;
 };
 
 namespace ReactNavigation {

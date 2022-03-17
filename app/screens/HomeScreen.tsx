@@ -6,8 +6,7 @@ import {
   Text,
   Platform,
   SafeAreaView,
-  ScrollView,
-  Button
+  ScrollView
 } from 'react-native';
 
 import Header from '../components/Header';
