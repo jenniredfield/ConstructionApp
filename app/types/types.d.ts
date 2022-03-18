@@ -4,6 +4,7 @@ interface Product {
   description: string;
   price: number;
   imgSrc: string;
+  shop: string;
 }
 
 type RootStackParamList = {

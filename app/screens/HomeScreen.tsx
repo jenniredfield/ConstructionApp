@@ -11,8 +11,8 @@ import {
 
 import Header from '../components/Header';
 import Search from '../components/Search';
-import Footer from '../components/Footer';
-import StickyNav from '../components/StickyNav';
+// import Footer from '../components/Footer'; Not used?
+import HomeHero from '../components/HomeHero';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'HomeScreen'>;
 
@@ -23,11 +23,9 @@ const HomeScreen = React.memo(function HomeScreen({ navigation }: Props) {
       <Search />
       <ScrollView>
         <View>
-            <Text>HomeScreen YO</Text>
+           <HomeHero />
         </View>
-        <Footer />
       </ScrollView>
-      <StickyNav />
     </SafeAreaView>
   );
 });

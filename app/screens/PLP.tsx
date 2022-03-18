@@ -15,11 +15,7 @@ const PLP = React.memo(function PLP() {
       <View style={styles.wrapper}>
         <PLPHeader />
         <Products />
-        {/* <View style={styles.footerWrapper}>
-          <Footer />
-        </View> */}
       </View>
-      <StickyNav />
     </SafeAreaView>
   );
 });
