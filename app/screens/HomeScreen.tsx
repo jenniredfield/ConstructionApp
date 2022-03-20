@@ -11,12 +11,13 @@ import {
 
 import Header from '../components/Header';
 import Search from '../components/Search';
-// import Footer from '../components/Footer'; Not used?
 import HomeHero from '../components/HomeHero';
+import { useSelector } from 'react-redux';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'HomeScreen'>;
 
 const HomeScreen = React.memo(function HomeScreen({ navigation }: Props) {
+  const user = useSelector((state: AppState) => state.user)
   return (
     <SafeAreaView style={styles.container}>
       <Header />
