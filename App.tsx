@@ -1,30 +1,34 @@
 import { StyleSheet, Platform } from 'react-native';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, Store } from 'redux';
 
 import reducers from './app/redux/reducers';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { NavigationContainer } from '@react-navigation/native';
+
 import HomeScreen from './app/screens/HomeScreen';
 import PLP from './app/screens/PLP';
 import LoginScreen from './app/screens/LoginScreen';
+import MyAccount from './app/screens/MyAccount';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
 // create Store
-const store = createStore(reducers);
+const store: Store = createStore(reducers);
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
 
 /**
  * This needs to contain screen stacks
- * 
- * 
+ *
+ * think about organization of components, folders etc
+ * como fazer um codigo de python rodar no firebase?
+ * database no firebase
  * Add firebase auth to app
  */
 
+const Stack = createNativeStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 export default function App() {

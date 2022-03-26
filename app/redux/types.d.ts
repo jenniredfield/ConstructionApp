@@ -20,3 +20,11 @@ interface FetchingState {
     isFetching: boolean;
     hasError: boolean;
 }
+
+// TODO: improve reducers type
+type IReducers = (state?: AppState, action?: { type: string, payload?: FetchUserCompletePayload }) => AppState;
+
+interface FetchUserCompletePayload {
+    name: string;
+    email: string;
+}

@@ -26,7 +26,7 @@ const INITIAL_STATE: AppState = {
     }
 }
 
-const reducers = (state = INITIAL_STATE, { type, payload }) => {
+const reducers: IReducers = (state = INITIAL_STATE, { type, payload }) => {
     switch (type) {
         case FETCH_USER_STARTED: {
             return {
@@ -43,7 +43,8 @@ const reducers = (state = INITIAL_STATE, { type, payload }) => {
                 user: { 
                     ...state.user,
                     isFetching: false,
-                    email: payload.name
+                    email: payload.email,
+                    name: payload.name
                 }
             }
         }
