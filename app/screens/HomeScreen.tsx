@@ -6,18 +6,25 @@ import {
   Text,
   Platform,
   SafeAreaView,
-  ScrollView
+  ScrollView,
+  Button
 } from 'react-native';
 
 import Header from '../components/Header';
 import Search from '../components/Search';
 import HomeHero from '../components/HomeHero';
 import { useSelector } from 'react-redux';
+import { seedTestDB } from '../seed/seed';
 
 type Props = NativeStackScreenProps<RootStackParamList, 'HomeScreen'>;
 
 const HomeScreen = React.memo(function HomeScreen({ navigation }: Props) {
-  const user = useSelector((state: AppState) => state.user)
+  const user = useSelector((state: AppState) => state.user);
+
+  const handleSeed = () => {
+    seedTestDB();
+  }
+
   return (
     <SafeAreaView style={styles.container}>
       <Header />
@@ -25,6 +32,7 @@ const HomeScreen = React.memo(function HomeScreen({ navigation }: Props) {
       <ScrollView>
         <View>
            <HomeHero />
+           <Button title='Seed DB' onPress={handleSeed}>Seed DB</Button>
         </View>
       </ScrollView>
     </SafeAreaView>

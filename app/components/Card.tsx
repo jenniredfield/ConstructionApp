@@ -7,10 +7,12 @@ import {
   useWindowDimensions,
 } from 'react-native';
 
-const Card = React.memo(function Cart({
+const Card = React.memo(function Card({
   imgSrc,
+  name,
   description,
   price,
+  shop,
   id,
 }: Product) {
   const formattedPrice = '£' + (price / 100).toFixed(2); // move to another place?
@@ -28,7 +30,9 @@ const Card = React.memo(function Cart({
         }}
       ></Image>
       <View style={styles.descriptionContainer}>
+        <Text>{name}</Text>
         <Text>{description}</Text>
+        <Text>{shop}</Text>
         <Text style={styles.price}>{formattedPrice}</Text>
       </View>
     </View>
@@ -49,9 +53,9 @@ const styles = StyleSheet.create({
     elevation: 3,
   },
   descriptionContainer: {
-    padding: 10
+    padding: 10,
   },
   price: {
-    marginTop: 10
-  }
+    marginTop: 10,
+  },
 });

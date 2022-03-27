@@ -1,10 +1,11 @@
 interface Product {
-  id: string;
+  id?: string;
   name: string;
   description: string;
   price: number;
   imgSrc: string;
   shop: string;
+  product_type: string;
 }
 
 type RootStackParamList = {

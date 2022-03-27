@@ -9,7 +9,7 @@ const PLPHeader = React.memo(function PLPHeader() {
 
   return (
     <View style={styles.container}>
-        <Text>Azulejos</Text>
+        <Text>Products</Text>
     </View>
   );
 });
@@ -21,6 +21,6 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
     alignItems: 'center',
     justifyContent: 'center',
-    height: 60,
+    height: 40,
   },
 });
