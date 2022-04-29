@@ -1,5 +1,11 @@
 import React from 'react';
-import { StyleSheet, SafeAreaView, View, Platform } from 'react-native';
+import {
+  StyleSheet,
+  SafeAreaView,
+  View,
+  Platform,
+  StatusBar,
+} from 'react-native';
 import Header from '../components/Header';
 import Search from '../components/Search';
 import Footer from '../components/Footer';
@@ -29,7 +35,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignSelf: 'stretch',
     backgroundColor: '#fff',
-    paddingTop: Platform.OS === 'android' ? 30 : 0,
+    paddingTop: StatusBar.currentHeight || 0,
   },
   wrapper: {
     flex: 1,

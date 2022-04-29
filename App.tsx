@@ -1,4 +1,4 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet, Platform, StatusBar } from 'react-native';
 import { Provider } from 'react-redux';
 import { createStore, Store } from 'redux';
 
@@ -80,6 +80,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     alignSelf: 'stretch',
-    paddingTop: Platform.OS === 'android' ? 30 : 0,
   },
 });
