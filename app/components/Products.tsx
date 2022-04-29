@@ -1,32 +1,34 @@
 import { useState, useEffect } from 'react';
 import {
   StyleSheet,
-  Text,
   View,
   FlatList,
   ListRenderItemInfo,
-  ScrollView,
+  Text,
 } from 'react-native';
 import Card from './Card';
-import { products } from '../data/products';
-import { db } from '../../firebase';
+import { getFirebaseCollection } from '../firebase/api';
 
 export default function Products() {
   const [fetchedProducts, setProducts] = useState<Product[]>([]);
-  console.log("🚀 ~ file: Products.tsx ~ line 16 ~ Products ~ fetchedProducts", fetchedProducts)
 
   useEffect(() => {
-    db.collection('products')
-      .get()
-      .then((querySnapshot) => {
-        const newProducts: Product[] = [];
-        querySnapshot.forEach((doc) => {
-          console.log(`${doc.id} => ${JSON.stringify(doc.data(), null, 2)}`);
-          newProducts.push({id: doc.id, ...doc.data()})
-        });
-        setProducts(newProducts);
-      });
+    async function getCollection() {
+      const products = await getFirebaseCollection('products');
+
+      setProducts(products);
+    }
+
+    getCollection();
   }, []);
+
+  if (!fetchedProducts.length) {
+    return (
+      <View>
+        <Text>Loading...</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={{ flex: 1 }}>

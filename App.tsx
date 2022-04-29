@@ -18,7 +18,6 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 // create Store
 const store: Store = createStore(reducers);
 
-
 /**
  * This needs to contain screen stacks
  *
@@ -38,11 +37,9 @@ export default function App() {
         <Tab.Navigator
           screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
-              let iconName: typeof Ionicons['name'] = '';
+              let iconName = 'home' as any;
 
-              if (route.name === 'Home') {
-                iconName = 'home';
-              } else if (route.name === 'PLP') {
+              if (route.name === 'PLP') {
                 iconName = 'search';
               } else {
                 iconName = 'log-in-outline';

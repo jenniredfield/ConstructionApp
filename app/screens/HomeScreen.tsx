@@ -7,7 +7,8 @@ import {
   Platform,
   SafeAreaView,
   ScrollView,
-  Button
+  Button,
+  StatusBar,
 } from 'react-native';
 
 import Header from '../components/Header';
@@ -23,7 +24,7 @@ const HomeScreen = React.memo(function HomeScreen({ navigation }: Props) {
 
   const handleSeed = () => {
     seedTestDB();
-  }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -31,8 +32,8 @@ const HomeScreen = React.memo(function HomeScreen({ navigation }: Props) {
       <Search />
       <ScrollView>
         <View>
-           <HomeHero />
-           <Button title='Seed DB' onPress={handleSeed}>Seed DB</Button>
+          <HomeHero />
+          {/* <Button title='Seed DB' onPress={handleSeed}>Seed DB</Button> */}
         </View>
       </ScrollView>
     </SafeAreaView>
@@ -42,12 +43,12 @@ const HomeScreen = React.memo(function HomeScreen({ navigation }: Props) {
 export default HomeScreen;
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center',
-      alignSelf: 'stretch',
-      backgroundColor: '#fff',
-      paddingTop: Platform.OS === 'android' ? 30 : 0,
-    },
-  });
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: '#fff',
+    paddingTop: StatusBar.currentHeight || 0,
+  },
+});
